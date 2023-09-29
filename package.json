@@ -5,14 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "install-server": "npm install",
-    "install-dependencies": " npm run install-client && npm run install-server ",
-    "build-client": "cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build-client",
-    "server": "nodemon server --ignore client",
-    "client": "npm start --prefix client",
-    "start": "concurrently --kill-others-on-fail \" npm start\" \" npm run client\""
+    "start":"node server.js",
+    "server": "nodemon server.js --ignore client",
+    "client": "npm start --prefix ./client",
+    "dev": "concurrently --kill-others-on-fail \" npm start\" \" npm run client\""
   },
   "keywords": [],
   "author": "",
